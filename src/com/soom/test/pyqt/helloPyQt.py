@@ -1,16 +1,14 @@
 import sys
-# from PyQt5.QtCore import *
-# from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5 import QtWidgets
+from PyQt5 import uic
+
+class Form(QtWidgets.QDialog):
+    def __init__(self, parent=None):
+        QtWidgets.QDialog.__init__(self, parent)
+        self.ui = uic.loadUi("../../ui/helloPyQt.ui")
+        self.ui.show()
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-
-    w = QWidget()
-    w.resize(550, 350)
-    w.move(300, 300)
-    w.setWindowTitle('Hello World')
-    w.setToolTip("Hello PyQt5!!")
-    w.show()
-
+    app = QtWidgets.QApplication(sys.argv)
+    w = Form()
     sys.exit(app.exec_())
