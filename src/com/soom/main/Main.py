@@ -28,6 +28,3 @@ for i in range(1, int(gameCount)+1):
     lottoGameList.append(lottoNumberList);
 
 print(lottoGameList);
-
-
-
