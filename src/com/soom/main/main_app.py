@@ -1,22 +1,7 @@
 import wx
-
-
-class PageManageData(wx.Panel):
-    def __init__(self, parent):
-        wx.Panel.__init__(self, parent)
-        t = wx.StaticText(self, -1, "탭 페이지: 데이터 관리 영역", (20, 20))
-
-
-class PageCreateNumber(wx.Panel):
-    def __init__(self, parent):
-        wx.Panel.__init__(self, parent)
-        t = wx.StaticText(self, -1, "탭 페이지: 번호 생성 영역", (20, 20))
-
-
-class PageStatistic(wx.Panel):
-    def __init__(self, parent):
-        wx.Panel.__init__(self, parent)
-        t = wx.StaticText(self, -1, "탭 페이지: 통계 영역", (20, 20))
+from page_manage_data import PageManageData
+from page_create_number import PageCreateNumber
+from page_statistic import PageStatistic
 
 
 class MainApp(wx.Frame):
