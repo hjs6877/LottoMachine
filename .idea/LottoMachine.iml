@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$/src/com/soom">
-      <sourceFolder url="file://$MODULE_DIR$/src/com/soom/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/com/soom/test/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/src">
+      <sourceFolder url="file://$MODULE_DIR$/src/com" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/com/soom" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/com/soom/main" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.5.1 (C:\Python35\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

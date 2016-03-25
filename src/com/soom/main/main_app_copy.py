@@ -38,12 +38,12 @@ class MainApp(wx.Frame):
     def config_main_panel(self):
         self.main_panel.SetBackgroundColour(wx.Colour(143, 188, 143, 0))
         self.main_panel.SetSizer(self.main_panel_box_sizer)
-        # src 패널의 BoxSizer에 타이틀 위젯을 추가한다.
+        # main 패널의 BoxSizer에 타이틀 위젯을 추가한다.
         self.main_panel_box_sizer.Add(self.title_text, 0, wx.ALIGN_LEFT | wx.ALL, 5)
-        # src 패널의 BoxSizer에 메뉴 패널 위젯을 추가한다.
+        # main 패널의 BoxSizer에 메뉴 패널 위젯을 추가한다.
         self.main_panel_box_sizer.Add(self.menu_panel, 0, wx.ALIGN_LEFT | wx.ALL, 5)
 
-        # src 패널의 BoxSizer에 데이터 관리 패널 위젯을 추가한다.
+        # main 패널의 BoxSizer에 데이터 관리 패널 위젯을 추가한다.
         self.main_panel_box_sizer.Add(self.manage_data_panel, 1, wx.EXPAND | wx.ALL, 10)
 
     def config_title(self):
