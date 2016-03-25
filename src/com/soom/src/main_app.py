@@ -40,7 +40,7 @@ class MainApp(wx.Frame):
     def config_main_panel(self):
         self.main_panel.SetBackgroundColour(wx.Colour(143, 188, 143, 0))
         self.main_panel.SetSizer(self.main_panel_box_sizer)
-        # main 패널의 BoxSizer에 타이틀 위젯을 추가한다.
+        # src 패널의 BoxSizer에 타이틀 위젯을 추가한다.
         self.main_panel_box_sizer.Add(self.title_text, 0, wx.ALIGN_LEFT | wx.ALL, 5)
 
         self.main_panel_box_sizer.Add(self.menu_tab_panel, 1, wx.EXPAND | wx.ALL, 5)
