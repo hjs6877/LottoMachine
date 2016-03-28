@@ -9,16 +9,11 @@ class NotebookMenu(wx.Panel):
 
         self.__config_notebook_menu()
 
-        # page_create_number = PageCreateNumber(self.notebook)
-        # self.notebook.AddPage(page_create_number, "번호 생성")
-        #
-        # page_statistic = PageStatistic(self.notebook)
-        # self.notebook.AddPage(page_statistic, "통계")
-
     def __config_notebook_menu(self):
         # TODO notebook을 NotebookMenu 패널에서 분리 할 필요가 있음.
         notebook = wx.Notebook(self)
         data_manager = DataManager(notebook)
+
         number_creator = NumberCreator(notebook)
         statistic = Statistic(notebook)
 
