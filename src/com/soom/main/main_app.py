@@ -28,53 +28,53 @@ class MainApp(wx.Frame):
 
 
 
-# class MainApp(wx.Frame):
-#     def __init__(self):
-#         wx.Frame.__init__(self, parent=None, title="SOOM Lotto Machine")
-#
+        # class MainApp(wx.Frame):
+        #     def __init__(self):
+        #         wx.Frame.__init__(self, parent=None, title="SOOM Lotto Machine")
+        #
 
-#          # 메인 메뉴 탭 BoxSizer 생성
-#         self.menu_notebook_panel = wx.Panel(self.main_panel)
-#         self.menu_notebook_sizer = wx.BoxSizer()
-#
-#         # Notebook(탭) 생성
-#         self.notebook = wx.Notebook(self.menu_notebook_panel)
-#
-#         page_manage_data = PageManageData(self.notebook)
-#         self.notebook.AddPage(page_manage_data, "데이터 관리")
-#
-#         page_create_number = PageCreateNumber(self.notebook)
-#         self.notebook.AddPage(page_create_number, "번호 생성")
-#
-#         page_statistic = PageStatistic(self.notebook)
-#         self.notebook.AddPage(page_statistic, "통계")
-#
-#         # 각각의 위젯 영역 설정
-#         self.config_main_panel()
-#         self.config_title()
-#         self.config_menu_tab()
-#
+        #          # 메인 메뉴 탭 BoxSizer 생성
+        #         self.menu_notebook_panel = wx.Panel(self.main_panel)
+        #         self.menu_notebook_sizer = wx.BoxSizer()
+        #
+        #         # Notebook(탭) 생성
+        #         self.notebook = wx.Notebook(self.menu_notebook_panel)
+        #
+        #         page_manage_data = PageManageData(self.notebook)
+        #         self.notebook.AddPage(page_manage_data, "데이터 관리")
+        #
+        #         page_create_number = PageCreateNumber(self.notebook)
+        #         self.notebook.AddPage(page_create_number, "번호 생성")
+        #
+        #         page_statistic = PageStatistic(self.notebook)
+        #         self.notebook.AddPage(page_statistic, "통계")
+        #
+        #         # 각각의 위젯 영역 설정
+        #         self.config_main_panel()
+        #         self.config_title()
+        #         self.config_menu_tab()
+        #
 
-#
-#     def config_title(self):
-#         font1 = wx.Font(20, wx.SWISS, wx.SLANT, wx.BOLD, False, u'Comic Sans MS')
-#         self.title_text.SetFont(font1)
-#
-#     def config_menu_tab(self):
-#         self.menu_notebook_panel.SetBackgroundColour(wx.YELLOW)
-#         self.menu_notebook_panel.SetSizer(self.menu_notebook_sizer)
-#         self.menu_notebook_sizer.Add(self.notebook, 1, wx.EXPAND)
-
-
+        #
+        #     def config_title(self):
+        #         font1 = wx.Font(20, wx.SWISS, wx.SLANT, wx.BOLD, False, u'Comic Sans MS')
+        #         self.title_text.SetFont(font1)
+        #
+        #     def config_menu_tab(self):
+        #         self.menu_notebook_panel.SetBackgroundColour(wx.YELLOW)
+        #         self.menu_notebook_panel.SetSizer(self.menu_notebook_sizer)
+        #         self.menu_notebook_sizer.Add(self.notebook, 1, wx.EXPAND)
 
 
-    # def on_close(self, event):
-    #     if wx.MessageBox("프로그램을 종료할까요?"
-    #                      , "확인"
-    #                      , wx.YES_NO) != wx.YES:
-    #         event.Skip(False)
-    #     else:
-    #         self.Destroy()
+
+
+        # def on_close(self, event):
+        #     if wx.MessageBox("프로그램을 종료할까요?"
+        #                      , "확인"
+        #                      , wx.YES_NO) != wx.YES:
+        #         event.Skip(False)
+        #     else:
+        #         self.Destroy()
 
 if __name__ == '__main__':
     app = wx.App()

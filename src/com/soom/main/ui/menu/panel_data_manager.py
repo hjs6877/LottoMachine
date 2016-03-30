@@ -43,24 +43,32 @@ class DataManager(wx.Panel):
 
         inital_value = "select number"
 
-        # 번호 입력 TextCtrl
-        combobox_number_first = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
-        combobox_number_second = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
-        combobox_number_third = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
-        combobox_number_fourth = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
-        combobox_number_fifth = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
-        combobox_number_sixth = wx.ComboBox(panel_number_combobox, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        # 번호 입력 ComboBox
+        combobox_number_first = wx.ComboBox(panel_number_combobox, id=0, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        combobox_number_second = wx.ComboBox(panel_number_combobox, id=1, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        combobox_number_third = wx.ComboBox(panel_number_combobox, id=2, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        combobox_number_fourth = wx.ComboBox(panel_number_combobox, id=3, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        combobox_number_fifth = wx.ComboBox(panel_number_combobox, id=4, value=inital_value, choices=number_list, size=wx.Size(100, 30))
+        combobox_number_sixth = wx.ComboBox(panel_number_combobox, id=5, value=inital_value, choices=number_list, size=wx.Size(100, 30))
 
-        # 번호 입력 TextCtrl sizer에 TextCtrl 추가
+        # 번호 저장 버튼
+        button_save_number = wx.Button(panel_number_combobox, id=0, label="저장")
 
-        panel_number_combobox_sizer.Add(combobox_number_first, wx.ALIGN_LEFT | wx.ALL, 25)
-        panel_number_combobox_sizer.Add(combobox_number_second, wx.ALIGN_LEFT | wx.ALL, 25)
-        panel_number_combobox_sizer.Add(combobox_number_third, wx.ALIGN_LEFT | wx.ALL, 25)
-        panel_number_combobox_sizer.Add(combobox_number_fourth, wx.ALIGN_LEFT | wx.ALL, 25)
-        panel_number_combobox_sizer.Add(combobox_number_fifth, wx.ALIGN_LEFT | wx.ALL, 25)
-        panel_number_combobox_sizer.Add(combobox_number_sixth, wx.ALIGN_LEFT | wx.ALL, 25)
+        # 번호 입력 ComboBox sizer에 ComboBox 추가
+        panel_number_combobox_sizer.Add(combobox_number_first, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(combobox_number_second, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(combobox_number_third, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(combobox_number_fourth, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(combobox_number_fifth, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(combobox_number_sixth, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+        panel_number_combobox_sizer.Add(button_save_number, 0, wx.ALIGN_LEFT | wx.ALL, 10)
+
+        button_save_number.Bind(wx.EVT_BUTTON, self.save_number)
 
         # 데이터 관리 sizer에 번호 타입 패널을 추가
         panel_data_manager_sizer.Add(panel_number_type, 0, wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, 15)
         panel_data_manager_sizer.Add(panel_number_input_type, 0, wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, 15)
         panel_data_manager_sizer.Add(panel_number_combobox, 0, wx.ALIGN_LEFT | wx.ALL, 15)
+
+    def save_number(self, event):
+        print("번호 저장..")
