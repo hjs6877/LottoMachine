@@ -1,9 +1,13 @@
 import wx
 from ui.main_title import MainTitle
 from ui.menu.notebook_menu import NotebookMenu
+from db.db_manager import DbManager
 
 class MainApp(wx.Frame):
     def __init__(self):
+        db_manager = DbManager()
+        db_manager.create_table()
+
         wx.Frame.__init__(self, parent=None, title="SOOM Lotto Machine")
 
         # 메인 패널 생성

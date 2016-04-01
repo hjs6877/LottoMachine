@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/com/soom/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/com/soom/main/ui" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/com/soom/main/ui/menu" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/com/soom/main/db" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.5.1 (C:\Python35\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

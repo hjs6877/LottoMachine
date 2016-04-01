@@ -1,4 +1,5 @@
 import wx
+from db.connection_provider import ConnectionProvider
 
 class DataManager(wx.Panel):
     def __init__(self, parent):
