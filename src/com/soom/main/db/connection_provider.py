@@ -6,7 +6,4 @@ class ConnectionProvider:
 
     @staticmethod
     def get_connection():
-        if(ConnectionProvider.connection == None):
-            ConnectionProvider.connection = sqlite3.connect("lotto.db")
-
-        return ConnectionProvider.connection
+        return sqlite3.connect("lotto.db")
