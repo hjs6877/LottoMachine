@@ -2,6 +2,7 @@ import wx
 import wx.adv
 from db.connection_provider import ConnectionProvider
 import sqlite3
+import natsort
 
 class DataManager(wx.Panel):
     def __init__(self, parent):
@@ -146,9 +147,11 @@ class DataManager(wx.Panel):
         number5 = self.combobox_number_fifth.GetValue()
         number6 = self.combobox_number_sixth.GetValue()
         selected_number_list = [number1, number2, number3, number4, number5, number6]
-        # TODO 번호 desc로 정렬하기
 
         result = self.validate_input(installment, selected_number_list)
+
+        # 번호 오름차순 정렬
+        sorted_number_list = natsort.natsorted(selected_number_list)
 
         if result:
             connection = ConnectionProvider.get_connection()
@@ -157,7 +160,14 @@ class DataManager(wx.Panel):
             try:
                 cursor.execute("INSERT INTO win_number (installment, lottery_date, num1, num2, num3, num4, num5, num6)"
                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                            (installment, '2016-04-10', number1, number2, number3, number4, number5, number6))
+                            (installment
+                             , '2016-04-10'
+                             , sorted_number_list[0]
+                             , sorted_number_list[1]
+                             , sorted_number_list[2]
+                             , sorted_number_list[3]
+                             , sorted_number_list[4]
+                             , sorted_number_list[5]))
                 connection.commit()
             except sqlite3.IntegrityError as err:
                 print("이미 입력된 회차입니다. ({0})".format(err))
@@ -166,7 +176,7 @@ class DataManager(wx.Panel):
             else:
                 id = cursor.lastrowid
                 if(id != None):
-                    wx.MessageBox(str(id) + "를 저장했습니다.", "알림", wx.OK | wx.ICON_EXCLAMATION)
+                    wx.MessageBox(str(id) + "회차를 저장했습니다.", "알림", wx.OK | wx.ICON_EXCLAMATION)
                     #     TODO 선택한 항목들 초기화
                 else:
                     wx.MessageBox("정상적으로 저장되지 않았습니다. 다시 시도해주세요.", "알림", wx.OK | wx.ICON_EXCLAMATION)
